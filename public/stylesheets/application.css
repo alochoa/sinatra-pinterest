@@ -1,0 +1,8 @@
+.container {
+	-webkit-column-count: 3;
+	-webkit-column-gap: 12px;
+}
+
+.container img {
+	margin: 10px 0px;
+}
