@@ -8,7 +8,12 @@
 						<img src="<%= pin.image %>">
 					</a>
 					<h4><%= pin.title %></h4>
-					<p><%= pin.description %></p>
+					<h5>Posted by: <%= pin.user.username %></h5>
+					<p><%= pin.description %>
+						<span class="pull-right">
+							<i class="glyphicon glyphicon-comment"></i> <%= pin.comments.count %>
+						</span>
+					</p>
 				</article>
 		<% end %>
 	<% else %>
