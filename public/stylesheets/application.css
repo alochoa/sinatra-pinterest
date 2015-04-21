@@ -1,8 +1,33 @@
-.container {
+#wrapper {
+	margin-top: 50px;
+}
+
+.index-container {
 	-webkit-column-count: 3;
 	-webkit-column-gap: 12px;
 }
 
-.container img {
+.pin img {
 	margin: 10px 0px;
+	max-width: 100%;
+}
+
+.white {
+	color: white;
+}
+
+.pin, .comment {
+	background-color: #999;
+	margin: 15px 10px;
+	max-width: 420px;
+	padding: 10px;
+	box-shadow: 5px 5px 5px 2px rgba(51,51,51,1);
+}
+
+.comment {
+	background-color: #ccc;
+}
+
+.comment hr {
+	margin-top: 0px;
 }
