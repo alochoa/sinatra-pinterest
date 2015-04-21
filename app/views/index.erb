@@ -1,3 +1,20 @@
-<h1>Hello Part Time Class!</h1>
+<div class="container">
+	<h3>My Pins</h3>
+
+	<% if @pins.count > 0 %>
+		<% @pins.each do |pin| %>
+				<article class="pin">
+					<a href="/pins/<%= pin.id %>">
+						<img src="<%= pin.image %>">
+					</a>
+					<h4><%= pin.title %></h4>
+					<p><%= pin.description %></p>
+				</article>
+		<% end %>
+	<% else %>
+		<h4>There are no pins to show. Perhaps you should <a href="/pins/new" class="btn btn-success btn-sm">Add a Pin</a></h4>
+	<% end %>
+</div>
+
 
 
