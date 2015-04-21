@@ -16,11 +16,14 @@ ActiveRecord::Schema.define(version: 2) do
     t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "pin_id"
   end
 
   create_table "pins", force: true do |t|
     t.string   "title"
     t.string   "description"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"

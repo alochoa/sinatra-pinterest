@@ -13,7 +13,14 @@ end
 
 # Homepage (Root path)
 get '/' do
+	@pins = Pin.all.reverse
   erb :index
+end
+
+# Route for creating a new pin, just loads one ERB file
+# Has to be before /pins/:id, else :id == new
+get '/pins/new' do
+	erb :new_pin
 end
 
 # Ex: http://localhost:3000/pins/77
@@ -21,11 +28,6 @@ get '/pins/:id' do
 	# Find pin by id (primary key)
 	@pin = Pin.find(params[:id])
 	erb :pin
-end
-
-# Route for creating a new pin, just loads one ERB file
-get '/pins/new' do
-	erb :new_pin
 end
 
 # Route to which /pins/new posts to
@@ -50,7 +52,7 @@ post '/pins/:id/comments/create' do
 	pin = Pin.find(params[:id])
 
 	# Create new comment associated to pin
-	pin.comments.create body: body
+	pin.comments.create body: body, user_id: current_user.id
 	redirect "/pins/#{pin.id}"
 end
 
