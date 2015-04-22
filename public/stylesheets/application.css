@@ -31,3 +31,7 @@
 .comment hr {
 	margin-top: 0px;
 }
+
+.edit_image {
+	max-width: 300px;
+}

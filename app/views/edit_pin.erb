@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h4>Edit Pin</h4>
+		<form class="form-horizontal" method="POST" action="/pins/<%= @pin.id %>/update">
+			<div class="form-group">
+				<label for="title">Title:</label>
+				<input type="text" class="form-control" id="title" name="title" placeholder="Pin Title..." value="<%= @pin.title %>">
+			</div>
+			<div class="form-group">
+				<p>Current Image:</p>
+				<img src="<%= @pin.image %>" class="edit_image">
+				<br>
+				<label for="image">Image:</label>
+				<input type="text" class="form-control" id="image" name="image" placeholder="Image URL..." value="<%= @pin.image %>">
+			</div>
+			<div class="form-group">
+				<label for="description">Description:</label>
+				<input type="text" class="form-control" id="description" name="description" placeholder="Description..." value="<%= @pin.description %>">
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Edit Pin" class="btn btn-success">
+			</div>
+		</form>
+	</div>
+</div>

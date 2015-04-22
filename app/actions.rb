@@ -30,6 +30,23 @@ get '/pins/:id' do
 	erb :pin
 end
 
+get '/pins/:id/edit' do
+	@pin = Pin.find(params[:id])
+	erb :edit_pin
+end
+
+post '/pins/:id/update' do
+	title = params[:title]
+	description = params[:description]
+	image = params[:image]
+
+	pin = Pin.find(params[:id])
+
+	pin.update_attributes title: title, description: description, image: image
+
+	redirect "/pins/#{pin.id}"
+end
+
 # Route to which /pins/new posts to
 post '/pins/create' do
 	# Get form variables

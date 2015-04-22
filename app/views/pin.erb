@@ -3,6 +3,10 @@
 		<img src="<%= @pin.image %>">
 		<h4><%= @pin.title %></h4>
 		<p><strong>Posted by:</strong> <%= @pin.user.username %></p>
+		<p><%= @pin.description %></p>
+		<% if @pin.user.id == current_user.id %>
+			<a href="/pins/<%= @pin.id %>/edit" class="btn btn-sm btn-warning">Edit Pin</a>
+		<% end %>
 	</div>
 	<div class="comments">
 		<h4>Comments</h4>
